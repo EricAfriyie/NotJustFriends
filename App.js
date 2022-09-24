@@ -1,72 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
+import {  ScrollView, StyleSheet, View} from 'react-native';
 
-const post = {
-  id: "p1",
-  createdAt: "19 m",
-  User: {
-    id: "u1",
-    image:
-      "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/zuck.jpeg",
-    name: "Kwesi Afriyie",
-  },
-  description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-  image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
-  numberOfLikes: 11,
-  numberOfShares: 2,
-};
+import FeedScreen from './src/screens/FeedScreen';
+import CreatePostScreen from './src/screens/CreatePostScreen';
+
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-
-      <View style={styles.post}>
-        {/*header*/} 
-        <View style={styles.header}>
-          <Image source={{uri:post.image}} 
-          style={styles.profileImage}/>
-
-          <View>
-            <Text style={styles.name}>{post.User.name}</Text>
-            <Text style={styles.subtitle}>{post.createdAt}</Text>
-          </View>
-
-          <View>
-          <Entypo name="dots-three-horizontal" size={24} color="black" />
-          </View>
-
-        </View>
-        {/*body*/}
+   
+    <CreatePostScreen/>
+    
         
-        {/*footer*/}
-        <View style={styles.footer}>
-
-        </View>
-
-      </View>
-     
-
-
-
-
-
-      <StatusBar style="auto" />
+      
+      <StatusBar style="auto"/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+      flex: 1,
+     backgroundColor: 'lightgray',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-  profileImage:{
-    width:50,
-    height:50,
+     justifyContent: 'center',
+   },
 
-  },
+ 
+ 
+
 });
